@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: maker
-          image: IMAGE_PLACEHOLDER          # replaced by Jenkinsfile at deploy time
+          image: nihalayb/maker-latest:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
