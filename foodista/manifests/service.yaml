@@ -1,17 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: maker-service
+  name: foodista-service
   namespace: production
   labels:
-    app: maker
+    app: foodista
 spec:
   selector:
-    app: maker
-  type: ClusterIP          # change to LoadBalancer or NodePort if needed
+    app: foodista
+  type: ClusterIP
   ports:
     - name: http
       protocol: TCP
       port: 80
       targetPort: 80
-

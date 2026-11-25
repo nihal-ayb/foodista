@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: maker-deployment
+  name: foodista-deployment
   namespace: production
   labels:
-    app: maker
+    app: foodista
     tier: frontend
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: maker
+      app: foodista
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -19,11 +19,11 @@ spec:
   template:
     metadata:
       labels:
-        app: maker
+        app: foodista
         tier: frontend
     spec:
       containers:
-        - name: maker
+        - name: foodista
           image: nihalayb/maker-latest:latest
           imagePullPolicy: Always
           ports:
@@ -49,4 +49,3 @@ spec:
             initialDelaySeconds: 5
             periodSeconds: 10
       restartPolicy: Always
-
